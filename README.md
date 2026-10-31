@@ -38,6 +38,7 @@ Checkov output: [`evidence/checkov_insecure.txt`](evidence/checkov_insecure.txt)
 Checkov fails the intentionally vulnerable stack, including my custom policy `CKV2_CUSTOM_1` that rejects any firewall rule open to `0.0.0.0/0`.
 
 ![Checkov failing on the insecure stack](screenshots/01-checkov-insecure.png)
+![Checkov failing on the insecure stack](screenshots/01-checkov-insecure-b.png)
 
 ### 2. Pre-deployment: the hardened stack passes
 The secure stack passes every check. One documented exception (`CKV_GCP_62` on the log bucket) is suppressed with a written reason.
