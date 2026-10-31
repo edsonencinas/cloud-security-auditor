@@ -32,7 +32,27 @@ One run of automated remediation resolved 6 of 12 findings, including the only C
 Full reports: [`evidence/audit_before.md`](evidence/audit_before.md) and [`evidence/audit_after.md`](evidence/audit_after.md).
 Checkov output: [`evidence/checkov_insecure.txt`](evidence/checkov_insecure.txt) and [`evidence/checkov_secure.txt`](evidence/checkov_secure.txt).
 
-<!-- Add screenshots here: Checkov failing on insecure, Checkov passing on secure, CI run, report.md -->
+## Screenshots
+
+### 1. Pre-deployment: Checkov blocks the insecure Terraform
+Checkov fails the intentionally vulnerable stack, including my custom policy `CKV2_CUSTOM_1` that rejects any firewall rule open to `0.0.0.0/0`.
+
+![Checkov failing on the insecure stack](screenshots/01-checkov-insecure.png)
+
+### 2. Pre-deployment: the hardened stack passes
+The secure stack passes every check. One documented exception (`CKV_GCP_62` on the log bucket) is suppressed with a written reason.
+
+![Checkov passing on the secure stack](screenshots/02-checkov-secure.png)
+
+### 3. Runtime audit: after remediation
+Findings drop from 12 to 6. What remains is IAM and ICMP, deliberately left for human review.
+
+![Audit after remediation](screenshots/05-audit-after.png)
+
+### 4. CI/CD gate
+Every push and pull request runs Terraform format and validation, Checkov, and unit tests.
+
+![GitHub Actions workflow passing](screenshots/06-github-actions.png)
 
 ## Architecture
 
