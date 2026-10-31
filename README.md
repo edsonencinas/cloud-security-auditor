@@ -1,6 +1,6 @@
 # Automated Cloud Security Auditor (GCP)
 
-![CI](https://github.com/YOUR-USERNAME/cloud-security-auditor/actions/workflows/security.yml/badge.svg)
+![CI](https://github.com/edsonencinas/cloud-security-auditor/actions/workflows/security.yml/badge.svg)
 
 A two-layer cloud security tool for Google Cloud Platform:
 
@@ -92,7 +92,7 @@ cloud-security-auditor/
 **Requirements:** Python 3.10+, Terraform 1.5+, `gcloud`, and a **dedicated sandbox GCP project** (never point this at production). Google Cloud Shell has everything except the Python packages.
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/cloud-security-auditor.git
+git clone https://github.com/edsonencinas/cloud-security-auditor.git
 cd cloud-security-auditor
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
@@ -217,6 +217,3 @@ gcloud projects delete $PROJECT_ID   # optional: removes the whole sandbox
 
 This project deliberately deploys vulnerable resources. Use an isolated sandbox project with a budget alert, and never run `--remediate` against a project that holds real workloads.
 
-## License
-
-MIT (add a `LICENSE` file)

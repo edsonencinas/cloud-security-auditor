@@ -13,97 +13,98 @@ Run pip3 install -U checkov to update
 
 terraform scan results:
 
-Passed checks: 20, Failed checks: 3, Skipped checks: 0
+Passed checks: 22, Failed checks: 0, Skipped checks: 1
 
+Check: CKV_GCP_29: "Ensure that Cloud Storage buckets have uniform bucket-level access enabled"
+	PASSED for resource: google_storage_bucket.log_bucket
+	File: /main.tf:37-48
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/google-cloud-policies/google-cloud-storage-gcs-policies/bc-gcp-gcs-2
+Check: CKV_GCP_78: "Ensure Cloud storage has versioning enabled"
+	PASSED for resource: google_storage_bucket.log_bucket
+	File: /main.tf:37-48
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/google-cloud-policies/google-cloud-general-policies/ensure-gcp-cloud-storage-has-versioning-enabled
+Check: CKV_GCP_114: "Ensure public access prevention is enforced on Cloud Storage bucket"
+	PASSED for resource: google_storage_bucket.log_bucket
+	File: /main.tf:37-48
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/google-cloud-policies/google-cloud-general-policies/bc-google-cloud-114
 Check: CKV_GCP_63: "Bucket should not log to itself"
 	PASSED for resource: google_storage_bucket.private_bucket
-	File: /main.tf:38-52
+	File: /main.tf:50-64
 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/google-cloud-policies/google-cloud-storage-gcs-policies/bc-gcp-logging-3
 Check: CKV_GCP_29: "Ensure that Cloud Storage buckets have uniform bucket-level access enabled"
 	PASSED for resource: google_storage_bucket.private_bucket
-	File: /main.tf:38-52
+	File: /main.tf:50-64
 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/google-cloud-policies/google-cloud-storage-gcs-policies/bc-gcp-gcs-2
 Check: CKV_GCP_78: "Ensure Cloud storage has versioning enabled"
 	PASSED for resource: google_storage_bucket.private_bucket
-	File: /main.tf:38-52
+	File: /main.tf:50-64
 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/google-cloud-policies/google-cloud-general-policies/ensure-gcp-cloud-storage-has-versioning-enabled
 Check: CKV_GCP_62: "Bucket should log access"
 	PASSED for resource: google_storage_bucket.private_bucket
-	File: /main.tf:38-52
+	File: /main.tf:50-64
 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/google-cloud-policies/google-cloud-storage-gcs-policies/bc-gcp-logging-2
 Check: CKV_GCP_114: "Ensure public access prevention is enforced on Cloud Storage bucket"
 	PASSED for resource: google_storage_bucket.private_bucket
-	File: /main.tf:38-52
-	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/google-cloud-policies/google-cloud-general-policies/bc-google-cloud-114
-Check: CKV_GCP_29: "Ensure that Cloud Storage buckets have uniform bucket-level access enabled"
-	PASSED for resource: google_storage_bucket.log_bucket
-	File: /main.tf:54-60
-	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/google-cloud-policies/google-cloud-storage-gcs-policies/bc-gcp-gcs-2
-Check: CKV_GCP_114: "Ensure public access prevention is enforced on Cloud Storage bucket"
-	PASSED for resource: google_storage_bucket.log_bucket
-	File: /main.tf:54-60
+	File: /main.tf:50-64
 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/google-cloud-policies/google-cloud-general-policies/bc-google-cloud-114
 Check: CKV_GCP_75: "Ensure Google compute firewall ingress does not allow unrestricted FTP access"
 	PASSED for resource: google_compute_firewall.ssh_from_office
-	File: /main.tf:62-71
+	File: /main.tf:66-75
 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/google-cloud-policies/google-cloud-networking-policies/ensure-gcp-google-compute-firewall-ingress-does-not-allow-unrestricted-ftp-access
 Check: CKV_GCP_106: "Ensure Google compute firewall ingress does not allow unrestricted http port 80 access"
 	PASSED for resource: google_compute_firewall.ssh_from_office
-	File: /main.tf:62-71
+	File: /main.tf:66-75
 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/google-cloud-policies/google-cloud-networking-policies/ensure-gcp-google-compute-firewall-ingress-does-not-allow-unrestricted-http-port-80-access
 Check: CKV_GCP_77: "Ensure Google compute firewall ingress does not allow on ftp port"
 	PASSED for resource: google_compute_firewall.ssh_from_office
-	File: /main.tf:62-71
+	File: /main.tf:66-75
 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/google-cloud-policies/google-cloud-networking-policies/ensure-gcp-google-compute-firewall-ingress-does-not-allow-ftp-port-20-access
 Check: CKV_GCP_2: "Ensure Google compute firewall ingress does not allow unrestricted ssh access"
 	PASSED for resource: google_compute_firewall.ssh_from_office
-	File: /main.tf:62-71
+	File: /main.tf:66-75
 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/google-cloud-policies/google-cloud-networking-policies/bc-gcp-networking-1
 Check: CKV_GCP_88: "Ensure Google compute firewall ingress does not allow unrestricted mysql access"
 	PASSED for resource: google_compute_firewall.ssh_from_office
-	File: /main.tf:62-71
+	File: /main.tf:66-75
 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/google-cloud-policies/google-cloud-networking-policies/ensure-gcp-compute-firewall-ingress-does-not-allow-unrestricted-mysql-access
 Check: CKV_GCP_3: "Ensure Google compute firewall ingress does not allow unrestricted rdp access"
 	PASSED for resource: google_compute_firewall.ssh_from_office
-	File: /main.tf:62-71
+	File: /main.tf:66-75
 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/google-cloud-policies/google-cloud-networking-policies/bc-gcp-networking-2
 Check: CKV_GCP_41: "Ensure that IAM users are not assigned the Service Account User or Service Account Token Creator roles at project level"
-	PASSED for resource: google_project_iam_member.demo_viewer
-	File: /main.tf:73-77
+	PASSED for resource: google_project_iam_member.demo_log_viewer
+	File: /main.tf:77-81
 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/google-cloud-policies/google-cloud-iam-policies/bc-gcp-iam-3
 Check: CKV_GCP_49: "Ensure roles do not impersonate or manage Service Accounts used at project level"
-	PASSED for resource: google_project_iam_member.demo_viewer
-	File: /main.tf:73-77
+	PASSED for resource: google_project_iam_member.demo_log_viewer
+	File: /main.tf:77-81
 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/google-cloud-policies/google-cloud-iam-policies/bc-gcp-iam-10
+Check: CKV_GCP_117: "Ensure basic roles are not used at project level."
+	PASSED for resource: google_project_iam_member.demo_log_viewer
+	File: /main.tf:77-81
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/google-cloud-policies/google-cloud-iam-policies/bc-google-cloud-117
 Check: CKV_GCP_42: "Ensure that Service Account has no Admin privileges"
-	PASSED for resource: google_project_iam_member.demo_viewer
-	File: /main.tf:73-77
+	PASSED for resource: google_project_iam_member.demo_log_viewer
+	File: /main.tf:77-81
 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/google-cloud-policies/google-cloud-iam-policies/bc-gcp-iam-4
 Check: CKV_GCP_46: "Ensure Default Service account is not used at a project level"
-	PASSED for resource: google_project_iam_member.demo_viewer
-	File: /main.tf:73-77
+	PASSED for resource: google_project_iam_member.demo_log_viewer
+	File: /main.tf:77-81
 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/google-cloud-policies/google-cloud-iam-policies/bc-gcp-iam-7
 Check: CKV2_GCP_12: "Ensure GCP compute firewall ingress does not allow unrestricted access to all ports"
 	PASSED for resource: google_compute_firewall.ssh_from_office
-	File: /main.tf:62-71
+	File: /main.tf:66-75
 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/google-cloud-policies/google-cloud-networking-policies/ensure-gcp-google-compute-firewall-ingress-does-not-allow-unrestricted-access-to-all-ports
 Check: CKV2_GCP_18: "Ensure GCP network defines a firewall and does not use the default firewall"
 	PASSED for resource: google_compute_network.vpc
-	File: /main.tf:28-31
+	File: /main.tf:27-30
 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/google-cloud-policies/google-cloud-networking-policies/bc-gcp-2-18
 Check: CKV2_CUSTOM_1: "Firewall ingress must not allow 0.0.0.0/0"
 	PASSED for resource: google_compute_firewall.ssh_from_office
-	File: /main.tf:62-71
-Check: CKV_GCP_78: "Ensure Cloud storage has versioning enabled"
-	FAILED for resource: google_storage_bucket.log_bucket
-	File: /main.tf:54-60
-	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/google-cloud-policies/google-cloud-general-policies/ensure-gcp-cloud-storage-has-versioning-enabled
+	File: /main.tf:66-75
 Check: CKV_GCP_62: "Bucket should log access"
-	FAILED for resource: google_storage_bucket.log_bucket
-	File: /main.tf:54-60
+	SKIPPED for resource: google_storage_bucket.log_bucket
+	Suppress comment: Log destination bucket; logging to itself adds no value
+	File: /main.tf:37-48
 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/google-cloud-policies/google-cloud-storage-gcs-policies/bc-gcp-logging-2
-Check: CKV_GCP_117: "Ensure basic roles are not used at project level."
-	FAILED for resource: google_project_iam_member.demo_viewer
-	File: /main.tf:73-77
-	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/google-cloud-policies/google-cloud-iam-policies/bc-google-cloud-117
 
