@@ -1,0 +1,5 @@
+checkov==3.3.30
+google-api-python-client==2.201.0
+google-auth==2.62.0
+google-cloud-storage==3.17.1
+pytest==9.1.1

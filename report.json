@@ -1,0 +1,83 @@
+{
+  "project": "sec-auditor-sandbox-17376",
+  "generated": "2026-10-31T02:54:20+00:00",
+  "findings": [
+    {
+      "check_id": "IAM-002",
+      "severity": "HIGH",
+      "resource_type": "project.iam",
+      "resource": "sec-auditor-sandbox-17376",
+      "description": "Primitive role roles/editor granted to serviceAccount:844293679859-compute@developer.gserviceaccount.com",
+      "recommendation": "Replace with a predefined or custom role with only the needed permissions.",
+      "remediable": false,
+      "details": {
+        "role": "roles/editor",
+        "member": "serviceAccount:844293679859-compute@developer.gserviceaccount.com"
+      }
+    },
+    {
+      "check_id": "IAM-003",
+      "severity": "HIGH",
+      "resource_type": "project.iam",
+      "resource": "sec-auditor-sandbox-17376",
+      "description": "Service account serviceAccount:844293679859-compute@developer.gserviceaccount.com has roles/editor",
+      "recommendation": "Service accounts should use narrowly scoped roles.",
+      "remediable": false,
+      "details": {
+        "role": "roles/editor",
+        "member": "serviceAccount:844293679859-compute@developer.gserviceaccount.com"
+      }
+    },
+    {
+      "check_id": "IAM-002",
+      "severity": "HIGH",
+      "resource_type": "project.iam",
+      "resource": "sec-auditor-sandbox-17376",
+      "description": "Primitive role roles/editor granted to serviceAccount:audit-demo-sa@sec-auditor-sandbox-17376.iam.gserviceaccount.com",
+      "recommendation": "Replace with a predefined or custom role with only the needed permissions.",
+      "remediable": false,
+      "details": {
+        "role": "roles/editor",
+        "member": "serviceAccount:audit-demo-sa@sec-auditor-sandbox-17376.iam.gserviceaccount.com"
+      }
+    },
+    {
+      "check_id": "IAM-003",
+      "severity": "HIGH",
+      "resource_type": "project.iam",
+      "resource": "sec-auditor-sandbox-17376",
+      "description": "Service account serviceAccount:audit-demo-sa@sec-auditor-sandbox-17376.iam.gserviceaccount.com has roles/editor",
+      "recommendation": "Service accounts should use narrowly scoped roles.",
+      "remediable": false,
+      "details": {
+        "role": "roles/editor",
+        "member": "serviceAccount:audit-demo-sa@sec-auditor-sandbox-17376.iam.gserviceaccount.com"
+      }
+    },
+    {
+      "check_id": "IAM-002",
+      "severity": "HIGH",
+      "resource_type": "project.iam",
+      "resource": "sec-auditor-sandbox-17376",
+      "description": "Primitive role roles/owner granted to user:edy4orce@gmail.com",
+      "recommendation": "Replace with a predefined or custom role with only the needed permissions.",
+      "remediable": false,
+      "details": {
+        "role": "roles/owner",
+        "member": "user:edy4orce@gmail.com"
+      }
+    },
+    {
+      "check_id": "FW-002",
+      "severity": "MEDIUM",
+      "resource_type": "compute.firewall",
+      "resource": "default-allow-icmp",
+      "description": "Ingress allowed from 0.0.0.0/0 on non-sensitive ports.",
+      "recommendation": "Restrict source ranges where possible.",
+      "remediable": false,
+      "details": {
+        "project": "sec-auditor-sandbox-17376"
+      }
+    }
+  ]
+}

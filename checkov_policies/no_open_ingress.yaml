@@ -1,0 +1,11 @@
+metadata:
+  name: "Firewall ingress must not allow 0.0.0.0/0"
+  id: "CKV2_CUSTOM_1"
+  category: "NETWORKING"
+definition:
+  cond_type: attribute
+  resource_types:
+    - google_compute_firewall
+  attribute: source_ranges
+  operator: not_contains
+  value: "0.0.0.0/0"

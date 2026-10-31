@@ -1,0 +1,32 @@
+name: security-checks
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  iac-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+
+      - name: Terraform format and validate (secure config)
+        working-directory: terraform/secure
+        run: |
+          terraform fmt -check
+          terraform init -backend=false
+          terraform validate
+
+      - name: Checkov scan of secure config (must pass)
+        run: checkov -d terraform/secure --framework terraform --external-checks-dir checkov_policies
+
+      - name: Checkov scan of insecure config (documented failures)
+        run: checkov -d terraform/insecure --framework terraform --external-checks-dir checkov_policies --soft-fail
+
+      - name: Unit tests
+        run: python -m pytest -q
